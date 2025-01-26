@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class TaskViewModel(
     private val taskDao: TaskDao,
@@ -60,7 +61,9 @@ class TaskViewModel(
 
     fun addTask(task: Task) {
         viewModelScope.launch {
-            taskDao.insertTask(task)
+            withContext(Dispatchers.IO) {
+                taskDao.insertTask(task)
+            }
             analyticsHelper.logEvent("Task Added", Bundle().apply {
                 putString("task_title", task.title)
             })
@@ -70,7 +73,9 @@ class TaskViewModel(
 
     fun updateTask(task: Task) {
         viewModelScope.launch {
-            taskDao.updateTask(task)
+            withContext(Dispatchers.IO) {
+                taskDao.updateTask(task)
+            }
             analyticsHelper.logEvent("Task Edited", Bundle().apply {
                 putString("task_title", task.title)
             })
@@ -87,11 +92,28 @@ class TaskViewModel(
 
     fun markTaskAsCompleted(task: Task) {
         viewModelScope.launch {
-            taskDao.updateTask(task.copy(isCompleted = true))
+            withContext(Dispatchers.IO) {
+                taskDao.updateTask(task.copy(isCompleted = true))
+            }
             analyticsHelper.logEvent("Task Completed", Bundle().apply {
                 putString("task_title", task.title)
             })
             loadTasks()
+        }
+    }
+
+    fun simulateDatabaseError() {
+        viewModelScope.launch {
+            try {
+                withContext(Dispatchers.IO) {
+                    // Intentionally insert a task with a null description
+                    val task = Task(title = "Invalid Task", description = null.toString())
+                    taskDao.insertTask(task)
+                }
+            } catch (e: Exception) {
+                Log.e("TaskViewModel", "Simulated database error", e)
+                FirebaseCrashlytics.getInstance().recordException(e)
+            }
         }
     }
 }

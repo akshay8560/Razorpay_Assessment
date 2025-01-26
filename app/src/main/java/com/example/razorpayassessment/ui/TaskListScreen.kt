@@ -11,34 +11,42 @@ import androidx.compose.ui.unit.dp
 import com.example.razorpayassessment.data.Task
 
 @Composable
-fun TaskListScreen(tasks: List<Task>, onTaskClick: (Task) -> Unit, modifier: Modifier) {
-    if (tasks.isEmpty()) {
-        // Show a message when no tasks are available
-        Text("No tasks available", modifier = modifier.padding(16.dp))
-    } else {
-        LazyColumn(modifier = modifier.fillMaxSize()) {
-            items(tasks) { task ->
-                TaskItem(task = task, onClick = { onTaskClick(task) })
+fun TaskListScreen(
+    tasks: List<Task>,
+    onTaskClick: (Task) -> Unit,
+    onAddTask: () -> Unit,
+    onMarkTaskCompleted: (Task) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier.fillMaxSize()) {
+        if (tasks.isEmpty()) {
+            Text("No tasks available", modifier = modifier.padding(16.dp))
+        } else {
+            LazyColumn(modifier = modifier.fillMaxSize()) {
+                items(tasks) { task ->
+                    TaskItem(
+                        task = task,
+                        onClick = { onTaskClick(task) },
+                        onMarkCompleted = { onMarkTaskCompleted(task) }
+                    )
+                }
             }
         }
     }
 }
 
-
-
-
-
 @Composable
-fun TaskItem(task: Task, onClick: () -> Unit) {
-    Card(
+fun TaskItem(task: Task, onClick: () -> Unit, onMarkCompleted: () -> Unit) {
+    Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
-            .clickable { onClick() }
+            .clickable(onClick = onClick)
+            .padding(16.dp)
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = task.title, style = MaterialTheme.typography.bodyLarge)
-            Text(text = task.description, style = MaterialTheme.typography.bodyMedium)
-        }
+        Text(task.title, modifier = Modifier.weight(1f))
+        Checkbox(
+            checked = task.isCompleted,
+            onCheckedChange = { onMarkCompleted() }
+        )
     }
 }
