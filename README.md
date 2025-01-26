@@ -23,7 +23,7 @@ This project is a task management application built using Jetpack Compose, Room,
 
 ## API Details
 
-- **API URL**: ([https://api.example.com](https://jsonplaceholder.typicode.com/)/todos)  
+- **API URL**: ([https://api.example.com](https://jsonplaceholder.typicode.com/todos))  
 - **API URL**: ()  
 
 - **Endpoints**:
