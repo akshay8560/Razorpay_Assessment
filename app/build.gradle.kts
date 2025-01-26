@@ -80,6 +80,9 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.0.0"))
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-crashlytics-ktx")
+    implementation("com.google.firebase:firebase-perf-ktx") // Add this line
+
+
 
     // Coroutine support for Room
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")

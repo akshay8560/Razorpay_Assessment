@@ -64,7 +64,7 @@ class TaskViewModel(
             withContext(Dispatchers.IO) {
                 taskDao.insertTask(task)
             }
-            analyticsHelper.logEvent("Task Added", Bundle().apply {
+            analyticsHelper.logEvent("Task_Added", Bundle().apply {
                 putString("task_title", task.title)
             })
             loadTasks()
@@ -76,7 +76,7 @@ class TaskViewModel(
             withContext(Dispatchers.IO) {
                 taskDao.updateTask(task)
             }
-            analyticsHelper.logEvent("Task Edited", Bundle().apply {
+            analyticsHelper.logEvent("Task_Edited", Bundle().apply {
                 putString("task_title", task.title)
             })
             loadTasks()
@@ -95,7 +95,7 @@ class TaskViewModel(
             withContext(Dispatchers.IO) {
                 taskDao.updateTask(task.copy(isCompleted = true))
             }
-            analyticsHelper.logEvent("Task Completed", Bundle().apply {
+            analyticsHelper.logEvent("Task_Completed", Bundle().apply {
                 putString("task_title", task.title)
             })
             loadTasks()

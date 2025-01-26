@@ -19,6 +19,8 @@ import com.example.razorpayassessment.viewmodel.TaskViewModel
 import com.example.razorpayassessment.viewmodel.TaskViewModelFactory
 import com.example.razorpayassessment.data.AppDatabase
 import com.example.razorpayassessment.data.Task
+import com.google.firebase.perf.FirebasePerformance
+import com.google.firebase.perf.metrics.Trace
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,7 +35,8 @@ class MainActivity : ComponentActivity() {
         // Initialize the Room Database and get the TaskDao
         val db = AppDatabase.getDatabase(applicationContext)
         val taskDao = db.taskDao()
-
+        val myTrace: Trace = FirebasePerformance.getInstance().newTrace("my_custom_trace")
+        myTrace.start()
         // Initialize ApiService and FirebaseAnalyticsHelper
         val apiService = ApiService.create()  // Create ApiService instance
         val analyticsHelper = FirebaseAnalyticsHelper(this)
