@@ -11,14 +11,18 @@ import androidx.compose.ui.unit.dp
 import com.example.razorpayassessment.data.Task
 
 @Composable
-fun TaskListScreen(tasks: List<Task>, onTaskClick: (Task) -> Unit) {
-    LazyColumn(modifier = Modifier.fillMaxSize()) {
-        items(tasks) { task ->
-            TaskItem(task = task, onClick = { onTaskClick(task) })
+fun TaskListScreen(tasks: List<Task>, onTaskClick: (Task) -> Unit, modifier: Modifier) {
+    if (tasks.isEmpty()) {
+        // Show a message when no tasks are available
+        Text("No tasks available", modifier = modifier.padding(16.dp))
+    } else {
+        LazyColumn(modifier = modifier.fillMaxSize()) {
+            items(tasks) { task ->
+                TaskItem(task = task, onClick = { onTaskClick(task) })
+            }
         }
     }
 }
-
 
 
 
@@ -37,4 +41,4 @@ fun TaskItem(task: Task, onClick: () -> Unit) {
             Text(text = task.description, style = MaterialTheme.typography.bodyMedium)
         }
     }
-} 
+}

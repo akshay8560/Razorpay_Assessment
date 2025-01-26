@@ -4,15 +4,17 @@ import androidx.room.*
 
 @Dao
 interface TaskDao {
+
+    // Correctly return List<Task> to allow Room to map the query results
     @Query("SELECT * FROM tasks")
-    suspend fun getAllTasks(): List<Task>
+     fun getAllTasks(): List<Task>  // Make sure it's List<Task>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTask(task: Task)
+     fun insertTask(task: Task)
 
     @Update
-    suspend fun updateTask(task: Task)
+     fun updateTask(task: Task)
 
     @Delete
-    suspend fun deleteTask(task: Task)
-} 
+     fun deleteTask(task: Task)
+}

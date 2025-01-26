@@ -24,9 +24,11 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
+
             )
         }
     }
@@ -39,6 +41,11 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+}
+kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas")
     }
 }
 
@@ -75,7 +82,13 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics-ktx")
 
     // Coroutine support for Room
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
+
+    // Kotlin coroutines (optional but recommended)
 }
 
 apply(plugin = "com.google.gms.google-services")

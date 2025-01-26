@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("tasks")
+    @GET("todos")
     suspend fun getTasks(): List<Task>
 
     companion object {
