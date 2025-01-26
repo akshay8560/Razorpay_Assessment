@@ -15,11 +15,21 @@ This project is a task management application built using Jetpack Compose, Room,
    - Navigate to the cloned repository and open it.
 
 3. **Configure Firebase**:
-   - Add your `google-services.json` file to the `app/` directory. This file is obtained from the Firebase Console when you set up your project.
+   - Add  `google-services.json` file to the `app/` directory. This file is obtained from the Firebase Console when you set up your project.
 
 4. **Build and Run**:
    - Ensure your Android device or emulator is connected.
    - Click on the "Run" button in Android Studio to build and run the app.
+
+## API Details
+
+- **API URL**: (https://api.example.com/todos)  
+
+- **Endpoints**:
+  - `GET /todos`: Fetches a list of tasks.
+  - `POST /todos`: Adds a new task.
+  - `PUT /todos/{id}`: Updates an existing task.
+  - `DELETE /todos/{id}`: Deletes a task.
 
 ## Third-Party Library Integration
 
