@@ -49,26 +49,22 @@ This project is a task management application built using Jetpack Compose, Room,
 - **Firebase Integration**: Offers comprehensive analytics, crash reporting, and performance monitoring, which are crucial for maintaining app quality and user experience.
 
 ## Screenshots and Recordings
-
 ### Firebase Analytics Console
 
-![Firebase Analytics Events]([https://drive.google.com/file/d/1FNbi8MnzKh0-VCUflV7gK4j50yCKgPii/view?usp=sharing]))
+[![Firebase Analytics Events](https://drive.google.com/thumbnail?id=1FNbi8MnzKh0-VCUflV7gK4j50yCKgPii)](https://drive.google.com/file/d/1FNbi8MnzKh0-VCUflV7gK4j50yCKgPii/view?usp=sharing)
 
-### Mobile Screen Recording 
-
-![Screen Recording Video]([https://www.youtube.com/shorts/6khK7akZ64g])
+### Mobile Screen Recording
+[![Screen Recording Video](https://img.youtube.com/vi/6khK7akZ64g/0.jpg)](https://www.youtube.com/shorts/6khK7akZ64g)
 
 ### Firebase Crashlytics Console
-
-![Firebase Crashlytics]([path/to/crashlytics_screenshot.png](https://drive.google.com/file/d/1wW9nCtrumUvbL0QiO3vdif1w5UQL73YO/view?usp=sharing))
+[![Firebase Crashlytics](https://drive.google.com/thumbnail?id=1wW9nCtrumUvbL0QiO3vdif1w5UQL73YO)](https://drive.google.com/file/d/1wW9nCtrumUvbL0QiO3vdif1w5UQL73YO/view?usp=sharing)
 
 ### Firebase Performance Monitoring
-
-![Network Performance]([path/to/performance_screenshot.png](https://drive.google.com/file/d/1EAm-ZN_rBBlsypYZEAs9d8rwhGA4kQnJ/view?usp=sharing))
+[![Network Performance](https://drive.google.com/thumbnail?id=1EAm-ZN_rBBlsypYZEAs9d8rwhGA4kQnJ)](https://drive.google.com/file/d/1EAm-ZN_rBBlsypYZEAs9d8rwhGA4kQnJ/view?usp=sharing)
 
 ## APK LINK
+[Download APK](https://drive.google.com/file/d/1Q0_Ng2HkOrbCY-jfSQZqqWMJdYIvFPyJ/view?usp=sharing)
 
-![APK]([https://drive.google.com/file/d/1Q0_Ng2HkOrbCY-jfSQZqqWMJdYIvFPyJ/view?usp=sharing])
 
 
 
