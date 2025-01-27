@@ -60,7 +60,7 @@ This project is a task management application built using Jetpack Compose, Room,
 [![Firebase Crashlytics](https://drive.google.com/thumbnail?id=1wW9nCtrumUvbL0QiO3vdif1w5UQL73YO)](https://drive.google.com/file/d/1wW9nCtrumUvbL0QiO3vdif1w5UQL73YO/view?usp=sharing)
 
 ### Firebase Performance Monitoring
-[![Network Performance](https://drive.google.com/thumbnail?id=1EAm-ZN_rBBlsypYZEAs9d8rwhGA4kQnJ)](https://drive.google.com/file/d/1EAm-ZN_rBBlsypYZEAs9d8rwhGA4kQnJ/view?usp=sharing)
+[![Network Performance](https://drive.google.com/thumbnail?id=1GKavehNiFysNrgWU0YsEtZ3xFyEeCJX4)](https://drive.google.com/file/d/1GKavehNiFysNrgWU0YsEtZ3xFyEeCJX4/view?usp=sharing)
 
 ## APK LINK
 [Download APK](https://drive.google.com/file/d/1Q0_Ng2HkOrbCY-jfSQZqqWMJdYIvFPyJ/view?usp=sharing)
