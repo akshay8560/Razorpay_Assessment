@@ -56,7 +56,7 @@ This project is a task management application built using Jetpack Compose, Room,
 
 ### Mobile Screen Recording 
 
-![Screen Recording Video](https://drive.google.com/file/d/1nVvRDnauoApI-37Y6JvHRu_I-kkYFsjL/view?usp=sharing)
+![Screen Recording Video](https://www.youtube.com/shorts/6khK7akZ64g)
 
 ### Firebase Crashlytics Console
 
